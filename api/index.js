@@ -1,10 +1,12 @@
 const Router = require('express').Router;
 const authApi = require('./auth');
+const homeApi = require('./home');
 
 module.exports = () => {
-  const app = Router();
+  const router = Router();
 
-  authApi(app);
+  authApi(router);
+  homeApi(router);
 
-  return app;
+  return router;
 };

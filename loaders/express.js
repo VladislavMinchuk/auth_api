@@ -9,7 +9,6 @@ module.exports = (app) => {
   require('../config/passport')(passport);
   // Passport middleware
   app.use(passport.initialize());
-  app.use(passport.session());
   
   // Load API routes
   app.use(config.api.prefix, routes());

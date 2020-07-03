@@ -16,6 +16,10 @@ module.exports = (req, res, next) => {
 
     req.userId = jwtService.decodedToken(token).id;
   } catch (err) {
+    if (err.name === 'TokenExpiredError') {
+      return res.status(401).send({ auth: false, message: 'The access token expired.' });
+    }
+
     return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });
   }
 

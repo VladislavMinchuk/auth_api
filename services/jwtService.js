@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const signature = 'signature_Secret_1Z';
-const expiration = '1m';
+const expiration = '10m';
 
 module.exports = {
   /**
